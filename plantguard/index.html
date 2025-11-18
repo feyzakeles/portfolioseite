@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PlantGuard - Projekt – Feyza Keles</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="/css/style.css" />
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-35KDLL4XYH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-35KDLL4XYH');
+</script>
+</head>
+<body class="page-body project-detail-body">
+  <div class="page-layout">
+
+    <!-- Sidebar -->
+    <aside class="page-sidebar">
+      <a href="/projekte/" class="sidebar-label">Projekte</a>
+      <div class="sidebar-line"></div>
+      <div class="sidebar-bottom">© 2025</div>
+    </aside>
+
+    <!-- rotes Overlay -->
+    <div class="page-transition"></div>
+
+    <!-- Inhalt -->
+    <main class="project-detail-main">
+      <div class="project-detail-inner">
+
+        <!-- 1) HERO – großer beiger Block -->
+        <section class="project-hero fade-up">
+          <div class="project-hero-frame">
+            <span class="project-hero-label">Projekt</span>
+            <h1 class="project-hero-title">PlantGuard</h1>
+            <p class="project-hero-subtitle">
+               UI/UX · Mobil.
+            </p>
+          </div>
+        </section>
+
+        <!-- 2) OVERVIEW-TEXT -->
+        <section class="project-overview fade-up">
+          <p class="project-overview-eyebrow">
+            PlantGuard ist ein konzeptionelles UX-Projekt, entwickelt im Masterstudiengang
+            Medieninformatik. Ziel: Pflanzenpflege vereinfachen — durch Diagnose,
+            Expertenwissen & Community-Austausch.
+          </p>
+        </section>
+
+        <!-- 3) META-SECTION – Role / Responsibilities / URL -->
+        <section class="project-meta-section fade-up">
+
+          <div class="project-meta-grid">
+            <div class="project-meta-column">
+              <h2 class="project-meta-heading">Rolle</h2>
+              <p class="project-meta-text">
+                 UX Research<br>
+                Interface Design<br>
+                Dokumentation
+              </p>
+            </div>
+
+            <div class="project-meta-column">
+              <h2 class="project-meta-heading">Responsibilities</h2>
+              <p class="project-meta-text">
+                 Design Sprint<br>
+                Stakeholder Analyse<br>
+                User Research<br>
+                User Story Mapping<br>
+                Prototyp UI
+              </p>
+            </div>
+
+            <div class="project-meta-column">
+              <h2 class="project-meta-heading">URL</h2>
+              <p class="project-meta-text">
+                <a
+                  href="https://github.com/feyzakeles/Projektarbeit-w-hrend-meines-Studiums"
+                  target="_blank"
+                  class="project-meta-link"
+                >
+                  https://github.com/feyzakeles/Projektarbeit-w-hrend-meines-Studiums
+                </a>
+              </p>
+            </div>
+          </div>
+        </section>
+
+             <section class="project-wide-image fade-up">
+  <video autoplay loop muted playsinline>
+    <source src="/img/plant.webm" type="video/webm" />
+  </video>
+</section>
+
+
+         <div class="project-meta-intro fade-up">
+          <p>
+            PlantGuard ist eine digitale Plattform, die Pflanzenfreunden hilft, ihre Pflanzen
+            richtig zu pflegen — mit Diagnosefunktion, Pflegehinweisen und einem Zugang
+            zu Expert:innen.
+          </p>
+          <p>
+            Das Projekt basiert auf einer umfassenden Analyse von Nutzerbedürfnissen,
+            Stakeholdern, funktionalen Anforderungen und Interaktionsmodellen. Dabei
+            entstand ein ganzheitliches Konzept mit Storyboards, User-Flows und Prototyp.
+          </p>
+        </div>
+
+     
+
+        <!-- 7) MOBILE GALLERY + CTA (ganz unten) -->
+        <section class="project-gallery fade-up">
+          <div class="project-gallery-track">
+            <article class="project-card project-card-1">
+              <img
+                src="/img/plant1.png"
+                alt="PlantGuard Mobile Screen 1"
+              />
+            </article>
+            <article class="project-card project-card-2">
+              <img
+                src="/img/plant2.png"
+                alt="PlantGuard Mobile Screen 2"
+              />
+            </article>
+            <article class="project-card project-card-3">
+              <img
+                src="/img/plant3.png"
+                alt="PlantGuard Mobile Screen 3"
+              />
+            </article>
+            <article class="project-card project-card-4">
+              <img
+                src="/img/plant4.png"
+                alt="PlantGuard Mobile Screen 4"
+              />
+            </article>
+          </div>
+
+          <a
+            href="https://github.com/feyzakeles/Projektarbeit-w-hrend-meines-Studiums"
+            target="_blank"
+            class="project-cta"
+          >
+            <span>Zum GitHub-Repository</span>
+            <span class="project-cta-arrow">→</span>
+          </a>
+        </section>
+
+      </div>
+    </main>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Fade-up Animation
+      const elements = document.querySelectorAll(".fade-up");
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) entry.target.classList.add("in-view");
+        });
+      }, { threshold: 0.1 });
+      elements.forEach((el) => observer.observe(el));
+
+      // Rotes Overlay für Seitenwechsel
+      const transition = document.querySelector(".page-transition");
+      const links = document.querySelectorAll("a[href]");
+
+      links.forEach((link) => {
+        const href = link.getAttribute("href");
+        if (
+          !href ||
+          href.startsWith("http") ||
+          href.startsWith("#") ||
+          link.target === "_blank"
+        ) {
+          return;
+        }
+
+        link.addEventListener("click", (e) => {
+          e.preventDefault();
+          transition.classList.add("active");
+          setTimeout(() => {
+            window.location.href = href;
+          }, 300);
+        });
+      });
+    });
+  </script>
+</body>
+</html>

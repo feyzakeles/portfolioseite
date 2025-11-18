@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kontakt – Feyza Keles</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/css/style.css" />
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-35KDLL4XYH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-35KDLL4XYH');
+</script>
+</head>
+<body class="page-body kontakt-body">
+  <div class="page-layout">
+    <!-- Sidebar -->
+    <aside class="page-sidebar">
+      <a href="/index.html" class="sidebar-label">HOME</a>
+      <div class="sidebar-line"></div>
+      <div class="sidebar-bottom">© 2025</div>
+    </aside>
+
+    <!-- rotes Overlay -->
+    <div class="page-transition"></div>
+
+    <main class="page-main">
+      <div class="page-main-inner">
+        <section class="page-section-intro">
+          <h1 class="page-title fade-up">Kontakt</h1>
+          <p class="page-text fade-up delay-1">
+            Für Projektanfragen, Kooperationen oder einfach ein Hallo – ich
+            freue mich über deine Nachricht.
+          </p>
+        </section>
+
+        <section class="page-section-content">
+          <div class="contact-block fade-up delay-2">
+            <h2 class="about-heading">E-Mail</h2>
+            <p class="page-text">
+              <a href="mailto:feyzakeles@web.de" class="contact-link">
+                feyzakeles@web.de
+              </a>
+            </p>
+          </div>
+
+          <div class="contact-block fade-up delay-3">
+            <h2 class="about-heading">Netzwerke</h2>
+            <p class="page-text">
+              <a href="https://www.linkedin.com/in/feyzakeles" class="contact-link">LinkedIn</a><br />
+              <a href="https://github.com/feyzakeles" class="contact-link">GitHub</a>
+            </p>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      /* Fade-up Animation */
+      const elements = document.querySelectorAll(".fade-up");
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("in-view");
+          }
+        });
+      }, { threshold: 0.1 });
+      elements.forEach((el) => observer.observe(el));
+
+      /* Rotes Overlay für Seitenübergang */
+      const transition = document.querySelector(".page-transition");
+      const links = document.querySelectorAll("a[href]");
+
+      links.forEach(link => {
+        const href = link.getAttribute("href");
+
+        if (
+          !href ||
+          href.startsWith("http") ||
+          href.startsWith("#") ||
+          link.target === "_blank"
+        ) {
+          return;
+        }
+
+        link.addEventListener("click", e => {
+          e.preventDefault();
+          transition.classList.add("active");
+          setTimeout(() => {
+            window.location.href = href;
+          }, 300);
+        });
+      });
+    });
+  </script>
+</body>
+</html>

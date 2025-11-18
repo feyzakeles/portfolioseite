@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Feyza Keles – Portfolio</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-35KDLL4XYH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-35KDLL4XYH');
+</script>
+</head>
+<body class="home-body">
+  <div class="home-layout">
+    <!-- Sidebar -->
+    <aside class="home-sidebar">
+      <div class="sidebar-icons">
+        <a href="https://github.com/feyzakeles" target="_blank" class="sidebar-icon">
+          <img src="icons/github.svg" alt="GitHub" />
+        </a>
+        <a href="https://www.linkedin.com/in/feyzakeles" target="_blank" class="sidebar-icon">
+          <img src="icons/linkedin.svg" alt="LinkedIn" />
+        </a>
+      </div>
+
+      <div class="sidebar-line"></div>
+
+      <div class="sidebar-bottom">© 2025</div>
+    </aside>
+
+    <!-- rotes Overlay für Seitenübergang -->
+    <div class="page-transition"></div>
+
+    <!-- Inhalt -->
+    <main class="home-main">
+      <div class="home-main-inner">
+        <section class="home-intro">
+<h1 class="home-name fade-up" aria-live="polite">
+  <span id="greeting"></span><span id="type-cursor" class="type-cursor" aria-hidden="true"></span>
+</h1>
+
+  <p class="home-role fade-up delay-1">
+    Medieninformatikerin · UX/UI Designerin  </p>
+  <p class="home-copy fade-up delay-2">
+    Ich liebe es, digitale Ideen zum Leben zu bringen, klar strukturiert und visuell stark.
+Mein Ziel ist es, Erlebnisse zu gestalten, die klug gedacht und schön umgesetzt sind.
+  </p>
+</section>
+
+        <nav class="home-menu">
+          <a href="/projekte/" class="home-menu-item fade-up delay-1">
+            MEINE&nbsp;PROJEKTE
+            <span class="home-menu-sub">Ausgewählte Arbeiten</span>
+          </a>
+
+          <a href="/ueber-mich/" class="home-menu-item fade-up delay-2">
+            ÜBER&nbsp;MICH
+            <span class="home-menu-sub">Hintergrund &amp; Erfahrung</span>
+          </a>
+
+          <a href="/kontakt/" class="home-menu-item fade-up delay-3">
+            KONTAKT
+            <span class="home-menu-sub">Projektanfragen &amp; Zusammenarbeit</span>
+          </a>
+        </nav>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      /* Fade-up Animation beim Scrollen */
+      const elements = document.querySelectorAll(".fade-up");
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("in-view");
+          }
+        });
+      }, { threshold: 0.1 });
+      elements.forEach((el) => observer.observe(el));
+
+      /* Rotes Overlay für Seitenübergang */
+      const transition = document.querySelector(".page-transition");
+      const links = document.querySelectorAll("a[href]");
+
+      links.forEach(link => {
+        const href = link.getAttribute("href");
+
+        // externe Links, Anker & target="_blank" ignorieren
+        if (
+          !href ||
+          href.startsWith("http") ||
+          href.startsWith("#") ||
+          link.target === "_blank"
+        ) {
+          return;
+        }
+
+        link.addEventListener("click", e => {
+          e.preventDefault();
+          transition.classList.add("active");
+          setTimeout(() => {
+            window.location.href = href;
+          }, 300); // muss zur CSS-Transition passen
+        });
+      });
+    });
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const TR_KEEP   = "Merhaba. Ben";     // markierter Teil
+  const FIXED_TXT = "Feyza.";           // bleibt stehen
+  const DE_PREFIX = "Hallo. Ich bin ";  // später vor "Feyza."
+  const STEP_MS   = 40;                 // Geschwindigkeit pro Rückwärts-Schritt
+  const TYPE_MS   = 55;                 // Tippgeschwindigkeit am Ende
+  const FADE_MS   = 180;                // Dauer für Fade-In/Out
+
+  const out = document.getElementById("greeting");
+  const globalCursor = document.getElementById("type-cursor");
+  const sleep = (ms)=>new Promise(r=>setTimeout(r,ms));
+
+  async function typeInto(node,text,speed=TYPE_MS){
+    node.textContent = "";
+    for(let i=1;i<=text.length;i++){
+      node.textContent = text.slice(0,i);
+      node.append(globalCursor);
+      await sleep(speed);
+    }
+  }
+
+  (async function run(){
+    // 1) Start: kompletter TR-Text steht
+    out.textContent = TR_KEEP + " " + FIXED_TXT;
+    out.append(globalCursor);
+    await sleep(300);
+
+    // 2) Struktur aufbauen
+    out.textContent = "";
+    const unSel = document.createElement("span");
+    unSel.textContent = TR_KEEP;
+
+    const caret = document.createElement("span");
+    caret.className = "sel-caret";
+
+    const sel = document.createElement("span");
+    sel.className = "sel";
+
+    const space = document.createTextNode(" ");
+    const fixed = document.createElement("span");
+    fixed.textContent = FIXED_TXT;
+
+    globalCursor.style.display = "none"; // globaler Cursor aus während Markierung
+    out.append(unSel, caret, sel, space, fixed);
+
+    // 2a) kurzer Fade-In der Markierung & Markierungs-Cursor
+    requestAnimationFrame(() => {
+      sel.classList.add("show");
+      caret.classList.add("show");
+    });
+    await sleep(FADE_MS);
+
+    // 3) „Shift + ←“: rechts-nach-links, Zeichenweise
+    while (unSel.textContent.length > 0){
+      const lastChar = unSel.textContent.slice(-1);
+      unSel.textContent = unSel.textContent.slice(0, -1);
+      sel.textContent = lastChar + sel.textContent;
+      out.insertBefore(caret, sel); // Cursor bleibt an der Trennkante
+      await sleep(STEP_MS);
+    }
+
+    // 4) sanfter Fade-Out der Markierung, dann entfernen
+    sel.classList.add("fade-out");
+    caret.classList.add("fade-out");
+    await sleep(FADE_MS);
+    sel.remove();
+    caret.remove();
+
+    // 5) Deutschen Prefix vor "Feyza." tippen
+    const prefix = document.createElement("span");
+    out.insertBefore(prefix, space); // [prefix][space][fixed]
+    globalCursor.style.display = "";
+    await typeInto(prefix, DE_PREFIX, TYPE_MS);
+
+    // 6) Cursor ausblenden
+    await sleep(250);
+    globalCursor.style.display = "none";
+  })();
+});
+  </script>
+</body>
+</html>

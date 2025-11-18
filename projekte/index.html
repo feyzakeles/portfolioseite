@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Meine Projekte – Feyza Keles</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/css/style.css" />
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-35KDLL4XYH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-35KDLL4XYH');
+</script>
+</head>
+<body class="page-body projekte-body">
+  <div class="page-layout">
+    <!-- Sidebar -->
+    <aside class="page-sidebar">
+      <a href="/index.html" class="sidebar-label">HOME</a>
+      <div class="sidebar-line"></div>
+      <div class="sidebar-bottom">© 2025</div>
+    </aside>
+
+    <!-- rotes Overlay -->
+    <div class="page-transition"></div>
+
+    <main class="page-main">
+      <div class="page-main-inner">
+        <section class="page-section-intro">
+          <h1 class="page-title fade-up">Meine Projekte</h1>
+            <p class="page-text fade-up delay-1">
+    Hier zeige ich ausgewählte Projekte aus Design und Web.
+    Mein 
+    <a href="/portfolio_feyzakeles.pdf" target="_blank" class="pdf-link">
+      PDF-Portfolio
+    </a> 
+    enthält zusätzlich meine Printarbeiten und weitere Projekte.
+  </p>
+        </section>
+
+        <section class="page-section-content">
+          <div class="project-list">
+            <a href="/teslaboard/" class="project-item fade-up delay-2">
+              <div class="project-title">Tesla Board Computer</div>
+              <div class="project-meta">Web · Frontend</div>
+            </a>
+            <a href="/myseatmate/" class="project-item fade-up delay-2">
+              <div class="project-title">My SeatMate</div>
+              <div class="project-meta">Web · Backend</div>
+            </a>
+
+            <a href="/beeasy/" class="project-item fade-up delay-3">
+              <div class="project-title">Be Easy</div>
+              <div class="project-meta">UX/UI · Mobil</div>
+            </a>
+
+            <a href="/healhtybee/" class="project-item fade-up delay-4">
+              <div class="project-title">Healthybee</div>
+              <div class="project-meta">UX/UI · Mobil</div>
+            </a>
+
+            <a href="/plantguard/" class="project-item fade-up delay-5">
+              <div class="project-title">PlantGuard</div>
+              <div class="project-meta">UX/UI · Mobil</div>
+            </a>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      /* Fade-up Animation */
+      const elements = document.querySelectorAll(".fade-up");
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("in-view");
+          }
+        });
+      }, { threshold: 0.1 });
+      elements.forEach((el) => observer.observe(el));
+
+      /* Rotes Overlay für Seitenübergang */
+      const transition = document.querySelector(".page-transition");
+      const links = document.querySelectorAll("a[href]");
+
+      links.forEach(link => {
+        const href = link.getAttribute("href");
+
+        if (
+          !href ||
+          href.startsWith("http") ||
+          href.startsWith("#") ||
+          link.target === "_blank"
+        ) {
+          return;
+        }
+
+        link.addEventListener("click", e => {
+          e.preventDefault();
+          transition.classList.add("active");
+          setTimeout(() => {
+            window.location.href = href;
+          }, 300);
+        });
+      });
+    });
+
+    // Parallax-Fade-In beim Laden
+document.addEventListener("DOMContentLoaded", () => {
+  if (document.body.classList.contains("projekte-body")) {
+    // kleine Verzögerung für smoother Einstieg
+    setTimeout(() => {
+      document.body.classList.add("loaded");
+    }, 200);
+  }
+});
+  </script>
+</body>
+</html>

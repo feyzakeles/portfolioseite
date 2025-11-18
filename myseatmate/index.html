@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My SeatMate – Projekt – Feyza Keles</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="/css/style.css" />
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-35KDLL4XYH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-35KDLL4XYH');
+</script>
+</head>
+<body class="page-body project-detail-body">
+  <div class="page-layout">
+
+    <!-- Sidebar -->
+    <aside class="page-sidebar">
+      <a href="/projekte/" class="sidebar-label">Projekte</a>
+      <div class="sidebar-line"></div>
+      <div class="sidebar-bottom">© 2025</div>
+    </aside>
+
+    <!-- rotes Overlay -->
+    <div class="page-transition"></div>
+
+    <!-- Inhalt -->
+    <main class="project-detail-main">
+      <div class="project-detail-inner">
+
+        <!-- 1) HERO – großer beiger Block -->
+        <section class="project-hero fade-up">
+          <div class="project-hero-frame">
+            <span class="project-hero-label">Projekt</span>
+            <h1 class="project-hero-title">My SeatMate</h1>
+            <p class="project-hero-subtitle">
+               Web · Backend.
+            </p>
+          </div>
+        </section>
+
+        <!-- 2) OVERVIEW-TEXT -->
+        <section class="project-overview fade-up">
+          <p class="project-overview-eyebrow">
+            Dieses Projekt war ein richtig spannendes und lehrreiches Uni Projekt im Rahmen des Kurses „Web basierte Anwendungen 2: Verteilte Systeme“. Die Idee entstand aus der Beobachtung, dass nur selten Fahrgemeinschaften gebildet werden, obwohl das gemeinsame Fahren nicht nur Geld spart, sondern auch die Umwelt schont und Menschen ohne eigenes Auto mehr Mobilität ermöglicht.
+          </p>
+        </section>
+
+        <!-- 3) META-SECTION – Role / Responsibilities / URL -->
+        <section class="project-meta-section fade-up">
+       
+
+          <div class="project-meta-grid">
+            <div class="project-meta-column">
+              <h2 class="project-meta-heading">Rolle</h2>
+              <p class="project-meta-text">
+                Backend Developer<br />
+                Team Member
+              </p>
+            </div>
+
+            <div class="project-meta-column">
+              <h2 class="project-meta-heading">Responsibilities</h2>
+              <p class="project-meta-text">
+               Konzeption und Umsetzung der <br>Backend Architektur mit Node.js,<br />
+                Entwicklung einer REST API für <br>CRUD Operationen,<br />
+                Anbindung und Verwaltung eines relationalen Datenbanksystems,<br />
+                Testen und Dokumentieren der <br>Schnittstellen mit Postman
+              </p>
+            </div>
+
+            <div class="project-meta-column">
+              <h2 class="project-meta-heading">URL</h2>
+              <p class="project-meta-text">
+                <a
+                  href="https://github.com/feyzakeles/WBA2SS20KelesEser"
+                  target="_blank"
+                  class="project-meta-link"
+                >
+                  https://github.com/feyzakeles/WBA2SS20KelesEser
+                </a>
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- 4) WEITERE SCREENS (breites Bild direkt darunter) -->
+        <section class="project-wide-image fade-up">
+          <img
+            src="/img/carshare.png"
+            alt="carshare"
+          />
+        </section>
+
+      <div class="project-meta-intro">
+            <p>
+              Ziel war es, eine webbasierte Car Sharing Plattform zu entwickeln, auf der Fahrer ihre Fahrten anbieten und Mitfahrer passende Angebote finden und buchen können. Die Kosten werden dabei fair geteilt und im besten Fall entsteht sogar eine angenehme, kommunikative Fahrtgemeinschaft.
+            </p>
+            <p>Technisch basiert das System auf Node.js und nutzt eine REST API, über die alle wichtigen CRUD Operationen (Erstellen, Lesen, Aktualisieren, Löschen) für Nutzer, Fahrten und Buchungen abgewickelt werden. Zum Testen und Verwalten der Schnittstellen kam Postman zum Einsatz.</p>
+            <p>
+              Das Projekt hat mir gezeigt, wie spannend es ist, technische Konzepte wie verteilte Systeme in einem praktischen, alltagsnahen Kontext umzusetzen und wie Software dabei helfen kann, nachhaltige und gemeinschaftliche Lösungen zu fördern.
+            </p>
+          </div>
+
+        <!-- 6) GROSSES DESKTOP-BILD -->
+        <section class="project-wide-image fade-up">
+          <img
+            src="/img/code.png"
+            alt="Code-Carsharing"
+          />
+        </section>
+
+        <!-- 7) MOBILE GALLERY + CTA (ganz unten) -->
+        <a
+            href="https://github.com/feyzakeles/WBA2SS20KelesEser"
+            target="_blank"
+            class="project-cta"
+          >
+            <span>Zum GitHub-Repository</span>
+            <span class="project-cta-arrow">→</span>
+          </a>
+
+
+      </div>
+    </main>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Fade-up Animation
+      const elements = document.querySelectorAll(".fade-up");
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) entry.target.classList.add("in-view");
+        });
+      }, { threshold: 0.1 });
+      elements.forEach((el) => observer.observe(el));
+
+      // Rotes Overlay für Seitenwechsel
+      const transition = document.querySelector(".page-transition");
+      const links = document.querySelectorAll("a[href]");
+
+      links.forEach((link) => {
+        const href = link.getAttribute("href");
+        if (
+          !href ||
+          href.startsWith("http") ||
+          href.startsWith("#") ||
+          link.target === "_blank"
+        ) {
+          return;
+        }
+
+        link.addEventListener("click", (e) => {
+          e.preventDefault();
+          transition.classList.add("active");
+          setTimeout(() => {
+            window.location.href = href;
+          }, 300);
+        });
+      });
+    });
+  </script>
+</body>
+</html>

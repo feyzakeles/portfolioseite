@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tesla Board Computer – Projekt – Feyza Keles</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+/>
+  <link rel="stylesheet" href="/css/style.css" />
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-35KDLL4XYH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-35KDLL4XYH');
+</script>
+</head>
+<body class="page-body project-detail-body">
+  <div class="page-layout">
+
+    <!-- Sidebar -->
+    <aside class="page-sidebar">
+      <a href="/projekte/" class="sidebar-label">Projekte</a>
+      <div class="sidebar-line"></div>
+      <div class="sidebar-bottom">© 2025</div>
+    </aside>
+
+    <!-- rotes Overlay -->
+    <div class="page-transition"></div>
+
+    <!-- Inhalt -->
+    <main class="project-detail-main">
+      <div class="project-detail-inner">
+
+        <!-- 1) HERO – großer beiger Block -->
+        <section class="project-hero fade-up">
+          <div class="project-hero-frame">
+            <span class="project-hero-label">Projekt</span>
+            <h1 class="project-hero-title">Tesla Board Computer</h1>
+            <p class="project-hero-subtitle">
+               UI/UX · Web.
+            </p>
+          </div>
+        </section>
+
+        <!-- 2) OVERVIEW-TEXT -->
+        <section class="project-overview fade-up">
+          <p class="project-overview-eyebrow">
+            Ziel des Projekts war es, sinnvolle Funktionen für den großen Touchscreen
+            im Tesla zu entwickeln und in einem stimmigen Interface zusammenzuführen.
+            Das Ergebnis ist ein Board-Computer, der Medien, Navigation, Kontakte,
+            Kalender und Wetter in einer klar strukturierten Oberfläche vereint
+          </p>
+        </section>
+
+        <!-- 3) META-SECTION – Role / Responsibilities / URL -->
+        <section class="project-meta-section fade-up">
+
+          <div class="project-meta-grid">
+            <div class="project-meta-column">
+              <h2 class="project-meta-heading">Rolle</h2>
+              <p class="project-meta-text">
+                UI/UX Konzeption<br />
+                Interface Design<br />
+                Frontend Mitarbeit (Teamprojekt)
+              </p>
+            </div>
+
+            <div class="project-meta-column">
+              <h2 class="project-meta-heading">Responsibilities</h2>
+              <p class="project-meta-text">
+                Entwicklung der <br>Navigationsstruktur (Media, Karte, Kontakte, Kalender, Wetter),<br />
+                Gestaltung des Screen-Layouts <br>für den Tesla-Touchscreen,<br />
+                Anpassung eines <br>HTML5-Templates an das Projekt<br />
+              </p>
+            </div>
+
+            <div class="project-meta-column">
+              <h2 class="project-meta-heading">URL</h2>
+              <p class="project-meta-text">
+                <a
+                  href="https://feyzakeles.github.io/WBA1WS17/"
+                  target="_blank"
+                  class="project-meta-link"
+                >
+                 https://feyzakeles.github.io/WBA1WS17/
+                </a>
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- 4) WEITERE SCREENS (breites Bild direkt darunter) -->
+        <section class="project-wide-image fade-up">
+          <img
+            src="/img/teslaseite.png"
+            alt="Tesla Board Screen"
+          />
+        </section>
+
+        <!-- 5) QUOTE -->
+        <section class="project-quote-section fade-up">
+          <p>
+            Die Grundlage bildete ein lizenzfreies HTML5-Template, das im Team
+            gezielt angepasst und erweitert wurde. Farbwelt, Typografie und Layout
+            wurden so gewählt, dass sie zum Tesla-Branding passen, aber gleichzeitig
+            eine klare, kontrastreiche Lesbarkeit im Fahrzeug unterstützen.
+          </p>
+          <p>
+            Die Navigation des Displays besteht aus den Bereichen <strong>Media</strong>,
+            <strong>Karte</strong>, <strong>Kontakte</strong>, <strong>Kalender</strong> und
+            <strong>Wetter</strong>. Über diese Tabs erreicht der Fahrer alle wichtigen
+            Funktionen mit wenigen Touch-Gesten.
+          </p>
+        </section>
+
+        <!-- 6) GROSSES DESKTOP-BILD -->
+        <section class="project-wide-image fade-up">
+          <img
+            src="/img/teslaseite2.png"
+            alt="Tesla Konzeptseite"
+          />
+        </section>
+        <a
+            href="https://feyzakeles.github.io/WBA1WS17/"
+            target="_blank"
+            class="project-cta"
+          >
+            <span>Zum GitHub-Repository</span>
+            <span class="project-cta-arrow">→</span>
+          </a>
+
+      </div>
+    </main>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Fade-up Animation
+      const elements = document.querySelectorAll(".fade-up");
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) entry.target.classList.add("in-view");
+        });
+      }, { threshold: 0.1 });
+      elements.forEach((el) => observer.observe(el));
+
+      // Rotes Overlay für Seitenwechsel
+      const transition = document.querySelector(".page-transition");
+      const links = document.querySelectorAll("a[href]");
+
+      links.forEach((link) => {
+        const href = link.getAttribute("href");
+        if (
+          !href ||
+          href.startsWith("http") ||
+          href.startsWith("#") ||
+          link.target === "_blank"
+        ) {
+          return;
+        }
+
+        link.addEventListener("click", (e) => {
+          e.preventDefault();
+          transition.classList.add("active");
+          setTimeout(() => {
+            window.location.href = href;
+          }, 300);
+        });
+      });
+    });
+  </script>
+</body>
+</html>

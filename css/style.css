@@ -1,0 +1,1245 @@
+/* ======================================================
+   FEYZA KELES – PORTFOLIO STYLE (WEISS + ROT)
+   Akzentfarbe: #D90000
+====================================================== */
+
+/* Variablen */
+:root {
+  --bg: #ffffff;
+  --primary: #d90000; /* dein Rot */
+  --text-main: #222222;
+  --text-muted: #555555;
+
+  --font-sans: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
+    "Helvetica Neue", Arial, sans-serif;
+  --font-serif: "Cormorant Garamond", "Times New Roman", serif;
+}
+
+/* Reset / Basis */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  font-family: var(--font-sans);
+  background: var(--bg);
+  color: var(--text-main);
+  line-height: 1.6;
+  transition: background-color 0.6s ease, color 0.6s ease;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ======================================================
+   STARTSEITE – Sidebar mit Icons (GitHub, LinkedIn)
+====================================================== */
+
+.home-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 90px;
+  height: 100vh;
+  padding: 32px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--bg);
+  border-right: none;
+  z-index: 2000;
+}
+
+/* Icons oben */
+.sidebar-icons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.sidebar-icon img {
+  width: 20px;
+  height: 20px;
+  filter: invert(19%) sepia(94%) saturate(7486%) hue-rotate(356deg)
+    brightness(91%) contrast(118%);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  opacity: 0.9;
+}
+
+.sidebar-icon:hover img {
+  transform: scale(1.15);
+  opacity: 1;
+}
+
+/* Linie mittig */
+.sidebar-line {
+  width: 1px;
+  height: 60vh;
+  background: var(--primary);
+  opacity: 0.6;
+  margin: 0 auto;
+  transition: none !important;
+}
+
+/* © 2025 unten */
+.sidebar-bottom {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  color: var(--primary);
+  text-transform: uppercase;
+}
+
+/* ======================================================
+   UNTERSEITEN – Sidebar mit HOME-Schrift
+====================================================== */
+
+.page-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 90px;
+  height: 100vh;
+  padding: 32px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--bg);
+  border-right: none;
+  z-index: 2000;
+}
+
+/* HOME / WORK vertikal */
+.page-sidebar .sidebar-label {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  text-decoration: none;
+  color: var(--primary);
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  transition: opacity 0.3s ease;
+}
+
+.page-sidebar .sidebar-label:hover {
+  opacity: 0.6;
+}
+
+/* Linie stabil */
+.page-sidebar .sidebar-line {
+  width: 1px;
+  height: 60vh;
+  background: var(--primary);
+  opacity: 0.6;
+  margin: 0 auto;
+  transition: none !important;
+}
+
+/* © 2025 unten */
+.page-sidebar .sidebar-bottom {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  color: var(--primary);
+  text-transform: uppercase;
+}
+
+/* ======================================================
+   Layout-Basis
+====================================================== */
+
+.home-main,
+.page-main,
+.about-main {
+  padding-left: 120px; /* Platz für Sidebar */
+  padding-right: 40px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+/* ======================================================
+   Startseite
+====================================================== */
+
+.home-main {
+  flex: 1;
+  padding: 40px min(8vw, 96px);
+  display: flex;
+  align-items: center;
+}
+
+.home-main-inner {
+  width: 100%;
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 2fr);
+  column-gap: min(6vw, 80px);
+  row-gap: 40px;
+}
+
+/* Intro links */
+.home-intro {
+  max-width: 420px;
+}
+
+.home-name {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: 1.4rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  margin: 0 0 16px;
+  color: var(--primary);
+}
+
+.home-role {
+  font-size: 0.9rem;
+  margin: 0 0 16px;
+  color: var(--text-main);
+}
+
+.home-copy {
+  font-size: 0.93rem;
+  line-height: 1.7;
+  max-width: 360px;
+  color: var(--text-muted);
+}
+
+/* Menü rechts */
+.home-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.home-menu-item {
+  font-family: var(--font-serif);
+  font-size: clamp(2.4rem, 5vw, 4.6rem);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--primary);
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  line-height: 0.9;
+  padding: 8px 0;
+  transform-origin: left center;
+  transition: transform 0.25s ease, color 0.25s ease, opacity 0.25s ease;
+}
+
+.home-menu-sub {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-top: 10px;
+  opacity: 0;
+  transform: translateY(4px);
+  color: var(--text-muted);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.home-menu-item:hover {
+  transform: translateX(10px);
+  opacity: 0.9;
+}
+
+.home-menu-item:hover .home-menu-sub {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ======================================================
+   Unterseiten – allgemeiner Content (Projekte-Liste / Kontakt)
+====================================================== */
+
+.page-main {
+  flex: 1;
+  padding: 40px min(8vw, 96px);
+  display: flex;
+  align-items: center;
+}
+
+.page-main-inner {
+  width: 100%;
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 2fr);
+  column-gap: min(6vw, 80px);
+  row-gap: 40px;
+}
+
+.page-section-intro {
+  max-width: 420px;
+}
+
+.page-title {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: 1.4rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  margin: 0 0 20px;
+  color: var(--primary);
+}
+
+.page-text {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: var(--text-muted);
+  margin-bottom: 14px;
+}
+
+/* Projektliste */
+.project-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.project-item {
+  display: block;
+  padding: 10px 0;
+  text-decoration: none;
+  color: var(--text-main);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  transform-origin: left center;
+  transition: transform 0.22s ease, letter-spacing 0.22s ease, opacity 0.22s ease;
+}
+
+.project-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.2rem, 4.2vw, 3.6rem);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  line-height: 0.9;
+  color: var(--primary);
+}
+
+.project-meta {
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-top: 6px;
+  color: var(--text-muted);
+}
+
+.project-item:hover {
+  transform: translateX(8px);
+  letter-spacing: 0.22em;
+  opacity: 0.9;
+}
+
+/* Kontakt */
+.contact-block {
+  margin-bottom: 24px;
+}
+
+.contact-link {
+  text-decoration: none;
+  border-bottom: 1px solid var(--primary);
+  padding-bottom: 1px;
+  color: var(--text-main);
+  transition: border-color 0.2s ease, opacity 0.2s ease;
+}
+
+.contact-link:hover {
+  opacity: 0.8;
+  border-color: var(--primary);
+}
+
+/* ======================================================
+   Über mich
+====================================================== */
+
+.about-main {
+  flex: 1;
+  padding: 60px min(8vw, 120px) 80px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.about-inner {
+  width: 100%;
+  max-width: 1160px;
+}
+
+.about-hero {
+  display: grid;
+column-gap: min(8vw, 100px);
+  column-gap: min(6vw, 80px);
+  row-gap: 32px;
+  align-items: flex-end;
+  margin-bottom: 72px;
+}
+
+.about-hero-text {
+  max-width: 640px;
+}
+
+.about-title {
+  white-space: nowrap; 
+  font-family: var(--font-serif);
+  font-size: clamp(3rem, 9vw, 6.2rem);
+  line-height: .9;
+  letter-spacing: .14em;  
+  text-transform: uppercase;
+  margin: 0 0 24px;
+  color: var(--primary);
+}
+
+.about-intro-big {
+  font-family: var(--font-serif);
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  line-height: 1.2;
+  margin: 0 0 20px;
+  color: var(--text-main);
+}
+
+.about-lead {
+  font-size: 0.98rem;
+  line-height: 1.8;
+  max-width: 540px;
+  color: var(--text-muted);
+}
+
+.about-hero-image img {
+  display: block;
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+@media (max-width: 900px){
+  .about-title{ white-space: normal; }
+  .about-hero{ grid-template-columns: 1fr; }
+}
+/* ======================================================
+   Animation – Fade Up
+====================================================== */
+
+.fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-up.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ======================================================
+   PAGE TRANSITION – kurzer roter Flash
+====================================================== */
+
+.page-transition {
+  position: fixed;
+  inset: 0;
+  background: #d90000;
+  z-index: 2500;
+  pointer-events: none;
+  opacity: 0;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.25s ease-in, opacity 0.25s ease-in;
+}
+
+.page-transition.active {
+  opacity: 1;
+  transform: scaleY(1);
+}
+
+/* ======================================================
+   HINTERGRUND-FARBEN PRO SEITE
+====================================================== */
+
+/* Startseite */
+body.home-body {
+  background: #ffffff;
+  color: #222;
+}
+
+/* Projekte-Liste: roter Hintergrund, weiße Typo */
+body.page-body.projekte-body {
+  background-color: #d90000;
+  color: #ffffff;
+}
+
+/* Sidebar auf rotem Hintergrund transparent */
+body.page-body.projekte-body .page-sidebar {
+  background: transparent !important;
+}
+
+/* Texte & Linien weiß */
+body.page-body.projekte-body .page-text,
+body.page-body.projekte-body .project-meta,
+body.page-body.projekte-body .project-item,
+body.page-body.projekte-body .contact-link,
+body.page-body.projekte-body .page-section-intro,
+body.page-body.projekte-body .page-section-content,
+body.page-body.projekte-body .page-title,
+body.page-body.projekte-body .project-title,
+body.page-body.projekte-body a {
+  color: #ffffff;
+}
+
+body.page-body.projekte-body .project-item {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+body.page-body.projekte-body .page-sidebar .sidebar-line {
+  background: #ffffff;
+  opacity: 0.7;
+}
+
+body.page-body.projekte-body .page-sidebar .sidebar-label,
+body.page-body.projekte-body .page-sidebar .sidebar-bottom {
+  color: #ffffff;
+}
+
+/* Über mich + Kontakt + Projekt-Detail: weiß wie Startseite */
+body.about-body,
+body.page-body.kontakt-body,
+body.page-body.project-detail-body {
+  background: #ffffff;
+  color: #222;
+}
+
+/* ======================================================
+   PROJECT DETAIL – Rot/Weiße Variante
+====================================================== */
+
+.project-detail-main {
+  flex: 1;
+  padding-left: 120px; /* Platz für Sidebar */
+  padding-right: 40px;
+  padding-top: 60px;
+  padding-bottom: 80px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.project-detail-inner {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* HERO – weißer Block mittig, mit Rot akzentuiert */
+.project-hero {
+  margin-bottom: 64px;
+}
+
+.project-hero-frame {
+  background: #ffffff;
+  color: var(--text-main);
+  padding: 80px 72px;
+  border-radius: 24px;
+  border: 2px solid var(--primary);
+  box-shadow: 0 24px 40px rgba(0, 0, 0, 0.06);
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.project-hero-label {
+  font-family: var(--font-sans);
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-size: 0.75rem;
+  display: inline-block;
+  margin-bottom: 18px;
+  color: var(--primary);
+}
+
+.project-hero-title {
+  font-family: var(--font-serif);
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin: 0 0 18px;
+  color: var(--text-main);
+}
+
+.project-hero-subtitle {
+  max-width: 520px;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+  text-align: justify;
+}
+
+/* Overview Text direkt unter Hero */
+.project-overview {
+  margin: 60px auto;
+  max-width: 720px;
+}
+
+.project-overview-eyebrow {
+  font-family: var(--font-serif);
+  font-size: clamp(1.6rem, 3.2vw, 2.2rem); /* größer & lesbarer */
+  line-height: 1.5;
+  color: var(--text-main);
+  margin-bottom: 40px;
+}
+
+
+.project-overview-text {
+  margin: 0;
+  font-size: 0.98rem;
+  line-height: 1.9;
+  color: var(--text-muted);
+}
+
+/* Gallery */
+.project-gallery {
+  margin: 56px auto 72px;
+  max-width: 1200px;
+}
+
+.project-gallery-label {
+  font-size: 0.9rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  color: var(--text-main);
+}
+
+.project-gallery-track {
+  display: flex;
+  justify-content: center; /* <-- Neu: zentriert alles */
+  gap: 24px;
+  overflow-x: auto;
+  padding: 12px 0 32px;
+  scroll-snap-type: x mandatory;
+}
+
+
+.project-card {
+  flex: 0 0 220px;
+  height: 440px;
+  border-radius: 26px;
+  background: #ffffff;
+  box-shadow: 0 24px 40px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  scroll-snap-align: start;
+}
+
+.project-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Button "Check it out" */
+.project-cta {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 60px auto 0;         /* mittig auf der Seite */
+  padding: 18px 48px;          /* größerer Button */
+  border-radius: 999px;
+  background: var(--primary);
+  color: #ffffff;
+  font-family: var(--font-serif);
+  font-size: 1.25rem;          /* größere Schrift */
+  letter-spacing: 0.05em;
+  text-transform: none;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(217, 0, 0, 0.3);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.25s ease;
+  display: block;              /* block-Element für margin auto */
+  width: fit-content;          /* nur so breit wie nötig */
+}
+
+.project-cta-arrow {
+  font-size: 1.6rem;
+  line-height: 1;
+}
+
+.project-cta:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 28px 50px rgba(217, 0, 0, 0.45);
+  opacity: 0.9;
+}
+
+/* Quote */
+.project-quote-section {
+  margin: 40px auto 32px;
+  max-width: 820px;
+}
+
+.project-quote {
+  font-family: var(--font-serif);
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  line-height: 1.6;
+  color: var(--text-main);
+}
+
+/* Große Bilder */
+.project-wide-image {
+  margin: 32px auto 64px;
+  max-width: 1200px;
+}
+
+.project-wide-image img {
+  width: 100%;
+  border-radius: 16px;
+  display: block;
+}
+
+/* Meta Section (Role / Responsibilities / URL) */
+.project-meta-section {
+  margin: 80px auto 60px;
+  max-width: 1100px; /* breiter, wie im Screenshot */
+}
+
+
+.project-meta-intro {
+  max-width: 900px;
+  margin-bottom: 32px;
+  margin: 40px auto 60px;
+  color: var(--text-muted);
+  font-size: 0.98rem;
+  line-height: 1.9;
+  text-align: justify;
+}
+
+
+.project-meta-intro p {
+  margin: 0 0 20px;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+
+.project-meta-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 60px;
+  justify-content: center;
+  align-items: start;
+  text-align: left; /* Text linksbündig */
+}
+
+.project-meta-heading {
+  font-family: var(--font-sans);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-weight: 600; /* stärker wie im Screenshot */
+  font-size: 0.8rem;
+  margin-bottom: 12px;
+  color: var(--primary);
+}
+.project-meta-text {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--text-main);
+}
+
+.project-meta-text a,
+.project-meta-text {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  word-break: break-all; /* sorgt dafür, dass lange Links umbrechen */
+  max-width: 100%;
+  white-space: normal;
+}
+
+.project-meta-link {
+  border-bottom: 1px solid var(--primary);
+}
+
+.project-overview,
+.project-meta-intro,
+.project-meta-section {
+max-width: 900px;     /* gleiche Breite für alle drei Bereiche */
+  margin: 0 auto;       /* mittig auf der Seite */
+  text-align: left; 
+}
+
+.project-overview-eyebrow,
+.project-meta-intro p,
+.project-meta-heading,
+.project-meta-text {
+  text-align: left;
+  margin-left: 0;
+}
+/* ======================================================
+   Responsive
+====================================================== */
+
+@media (max-width: 900px) {
+  .home-main,
+  .page-main,
+  .about-main,
+  .project-detail-main {
+    padding-left: 100px;
+    padding-right: 24px;
+  }
+
+  .project-hero-frame {
+    padding: 56px 32px;
+  }
+
+  .project-meta-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .project-detail-main {
+    padding-top: 40px;
+    padding-bottom: 60px;
+  }
+}
+
+/* ================================================
+   PROJEKTE: Linke Spalte fix & vertikal mittig,
+   rechte Spalte scrollt
+   (nutzt .page-section-intro links, .page-section-content rechts)
+=================================================== */
+
+body.page-body.projekte-body .page-main {
+  align-items: flex-start;            /* oben starten, weil links fixed ist */
+}
+
+body.page-body.projekte-body .page-main-inner {
+  display: block;                     /* Grid ausschalten, wir positionieren manuell */
+}
+
+/* Linke Spalte (Intro) – fix + vertikal mittig */
+body.page-body.projekte-body .page-section-intro {
+  position: fixed;
+  left: 120px;                        /* Platz für Sidebar (90px) + Luft (30px) */
+  top: 50%;
+  transform: translateY(-50%);
+  width: min(34vw, 520px);            /* responsiv begrenzt */
+  z-index: 1;
+}
+
+/* Rechte Spalte (Projektliste) – bekommt links Platz */
+body.page-body.projekte-body .page-section-content {
+  width: auto;
+  margin-left: calc(120px + min(34vw, 520px) + 60px); /* Sidebar + Introbreite + Abstand */
+  padding-top: 40px;
+  padding-bottom: 80px;
+}
+
+
+/* Hover-/Trenner-Linien in der Liste weiterhin sichtbar auf rot/weiß */
+body.page-body.projekte-body .project-item {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+/* ---------- Responsive Fallback ---------- */
+@media (max-width: 1100px) {
+  body.page-body.projekte-body .page-section-intro {
+    position: static;
+    transform: none;
+    width: auto;
+    margin-bottom: 28px;
+  }
+
+  body.page-body.projekte-body .page-section-content {
+    margin-left: 0;
+  }
+
+  body.page-body.projekte-body .page-section-content::before {
+    display: none;
+  }
+
+  body.page-body.projekte-body .page-main,
+  body.page-body.projekte-body .page-main-inner {
+    display: block;
+  }
+}
+
+/* Globaler Cursor (fürs Tippen später) */
+.type-cursor{
+  display:inline-block;width:0.08em;height:1em;vertical-align:-0.1em;
+  background: currentColor;margin-left:.12em;animation: blink .8s steps(1,end) infinite;
+}
+@keyframes blink { 50% { opacity:0; } }
+
+/* Markierung (nur "Merhaba. Ben") */
+.sel {
+  background:#b30000; color:#fff; border-radius:.12em; padding:.02em .06em;
+  white-space:nowrap;
+}
+
+/* Cursor, der MIT der Markierung läuft (zwischen unselected und selected) */
+.sel-caret{
+  display:inline-block; width:0.08em; height:1em; vertical-align:-0.1em;
+  background:#fff; animation: blink .8s steps(1,end) infinite;
+}
+
+/* weiches Ein-/Ausblenden der Markierung */
+.sel {
+  opacity: 0;
+  transition: opacity .18s ease-in;
+}
+.sel.show {
+  opacity: 1;
+}
+.sel.fade-out {
+  opacity: 0;
+  transition: opacity .18s ease-out;
+}
+
+/* Cursor der Markierung (weiß) ebenfalls sanft ein-/ausblenden */
+.sel-caret {
+  opacity: 0;
+  transition: opacity .18s ease-in;
+}
+.sel-caret.show {
+  opacity: 1;
+}
+.sel-caret.fade-out {
+  opacity: 0;
+  transition: opacity .18s ease-out;
+}
+
+/* === ABOUT: Bild oben bündig + Text nicht unter Bild =================== */
+/* Grid so umbauen, dass Kinder direkt im Grid liegen (damit wir einzelne
+   Absätze umpositionieren können) */
+.about-hero {
+  display: grid;
+grid-template-columns: minmax(0, 2.2fr) minmax(0, 1.4fr);
+  column-gap: min(6vw, 80px);
+  row-gap: 32px;
+  align-items: start;                 /* wichtig: oben bündig */
+}
+
+/* "Entkapseln": Kinder von .about-hero-text direkt am Grid teilnehmen lassen */
+.about-hero-text {
+  display: contents;
+}
+
+/* Standard-Zuweisung: Headline + erste Texte links in Spalte 1 */
+.about-title,
+.about-intro-big,
+.about-lead {
+  grid-column: 1;
+}
+
+/* Bild rechts in Spalte 2, oben bündig */
+.about-hero-image {
+  grid-column: 2;
+  grid-row: 1 / span 3;               /* nimmt die ersten Zeilen neben der Headline ein */
+  align-self: start;                   /* oben bündig */
+}
+
+.about-hero-image img {
+ width: min(28vw, 420px);   /* vorher: min(36vw, 560px) */
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* WICHTIG:
+   Alle .about-lead ab der ZWEITEN wandern UNTER das Bild und laufen dann
+   über die volle Breite (Spalten 1 bis 2). So „endet“ der Text links am Bild. */
+.about-lead:nth-of-type(n + 2) {
+  grid-column: 1 / -1;                 /* volle Breite unter dem Bild */
+  margin-top: 12px;
+}
+
+/* Feinschliff für kleinere Screens – zurück zum einfachen Flow */
+@media (max-width: 900px) {
+  .about-hero {
+    grid-template-columns: 1fr;
+  }
+  .about-hero-image {
+    grid-column: 1;
+    grid-row: auto;
+    margin-top: 12px;
+    justify-self: start;
+  }
+  .about-lead:nth-of-type(n + 2) {
+    grid-column: 1;
+  }
+}
+
+/* --- ABOUT: Abstand zwischen .about-intro-big und erster .about-lead minimieren --- */
+
+/* 1) .about-hero-text wieder als Block, damit row-gap nicht zwischen einzelnen <p> greift */
+.about-hero-text{
+  display: block !important;
+  max-width: 640px; /* bleibt wie vorher */
+}
+
+/* 2) Standardabstände innerhalb des Textblocks sehr klein halten */
+.about-hero-text p{
+  margin: 0 0 40px !important;
+}
+
+/* 3) Genau zwischen den gewünschten beiden <p> noch enger */
+.about-hero .about-intro-big{
+  margin-bottom: 4px !important;
+}
+.about-hero .about-intro-big + .about-lead{
+  margin-top: 0 !important;
+}
+
+/* 4) Bild bleibt oben bündig rechts */
+.about-hero{
+  align-items: start !important;
+}
+.about-hero-image{
+  align-self: start !important;
+}
+
+/* === ABOUT: Zitat + Text – gleiche Breite & enge Verbindung === */
+.about-quote {
+  font-family: var(--font-serif);
+  font-size: clamp(2.4rem, 4.5vw, 3.4rem);
+  line-height: 1.4;
+  max-width: 540px;      /* gleiche Breite wie der Fließtext */
+  margin: -150px 0 6px 0;   /* enger Kontakt nach oben & unten */
+  color: var(--primary); /* rot für Betonung */
+  text-align: left;
+}
+
+.about-text {
+  max-width: 540px;      /* gleiche Breite wie das Zitat */
+  margin: 0;             /* bündig unter dem Zitat */
+  color: var(--text-muted);
+  line-height: 1.8;
+}
+
+.pdf-link {
+  position: relative;
+  color: var(--text-main);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.pdf-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 1.5px;
+  background-color: #ffffff; /* Weißer Unterstrich */
+  transition: transform 0.3s ease;
+  transform-origin: left;
+  transform: scaleX(1);
+}
+
+.pdf-link:hover::after {
+  transform: scaleX(0);
+  transform-origin: right;
+}
+
+.project-wide-image video {
+  width: 100%;
+  display: block;
+  border-radius: 16px;
+  background: transparent;
+  mix-blend-mode: normal; /* oder: lighten / screen / multiply */
+}
+
+
+/* ======================================================
+   MOBILE NAV / SIDEBAR ALS TOP-BAR
+   (bis ca. 720px Breite)
+====================================================== */
+
+@media (max-width: 720px) {
+  /* Sidebar wird zur Top-Bar */
+  .home-sidebar,
+  .page-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    padding: 10px 16px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-right: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    background: var(--bg);
+    z-index: 2000;
+  }
+
+  /* Icons nebeneinander */
+  .sidebar-icons {
+    flex-direction: row;
+    gap: 12px;
+  }
+
+  /* Vertikale Linie ausblenden */
+  .sidebar-line {
+    display: none;
+  }
+
+  /* © Text horizontal */
+  .sidebar-bottom,
+  .page-sidebar .sidebar-bottom {
+    writing-mode: horizontal-tb;
+    transform: none;
+    font-size: 0.65rem;
+    letter-spacing: 0.16em;
+  }
+
+  /* HOME / WORK Label horizontal */
+  .page-sidebar .sidebar-label {
+    writing-mode: horizontal-tb;
+    transform: none;
+    font-size: 0.75rem;
+    letter-spacing: 0.18em;
+  }
+
+  /* Hauptbereiche: Platz nach oben für Top-Bar */
+  .home-main,
+  .page-main,
+  .about-main,
+  .project-detail-main {
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 88px;   /* Platz für die Top-Bar */
+    padding-bottom: 40px;
+    align-items: flex-start;
+  }
+
+  /* Grids auf eine Spalte */
+  .home-main-inner,
+  .page-main-inner {
+    display: grid;
+    grid-template-columns: 1fr;
+    column-gap: 0;
+    row-gap: 32px;
+  }
+
+  .home-intro,
+  .page-section-intro {
+    max-width: 100%;
+  }
+
+  .home-menu {
+    gap: 8px;
+  }
+
+  .home-menu-item {
+    font-size: clamp(1.8rem, 8vw, 2.6rem);
+  }
+
+  .project-title {
+    font-size: clamp(1.8rem, 7vw, 2.4rem);
+  }
+
+  .page-title,
+  .home-name {
+    letter-spacing: 0.18em;
+  }
+
+  /* ABOUT: etwas mehr Luft seitlich & alles untereinander */
+  .about-main {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .about-inner {
+    max-width: 100%;
+  }
+
+  .about-title {
+    font-size: clamp(2.4rem, 8vw, 3.2rem);
+    letter-spacing: 0.12em;
+  }
+
+  /* Project-Detail: Rahmen enger */
+  .project-hero-frame {
+    padding: 40px 24px;
+    border-radius: 18px;
+  }
+
+  .project-hero-title {
+    font-size: clamp(2.2rem, 8vw, 3rem);
+    letter-spacing: 0.14em;
+  }
+
+  .project-overview,
+  .project-meta-intro,
+  .project-meta-section,
+  .project-gallery,
+  .project-wide-image,
+  .project-quote-section {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .project-meta-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  /* Gallery Cards: breiter, damit sie „Slide“-Gefühl haben */
+  .project-gallery-track {
+    padding-bottom: 24px;
+  }
+
+  .project-card {
+    flex: 0 0 72vw;
+    height: auto;
+    aspect-ratio: 3 / 5;
+  }
+
+  /* CTA-Button mittig, aber kleiner */
+  .project-cta {
+    margin-top: 40px;
+    padding: 14px 32px;
+    font-size: 1.05rem;
+  }
+
+  /* About-Quote + Text vollbreit bei Mobile */
+  .about-quote,
+  .about-text {
+    max-width: 100%;
+  }
+}
+
+/* Etwas engere Typo auf sehr kleinen Geräten */
+@media (max-width: 480px) {
+  body {
+    font-size: 0.92rem;
+  }
+
+  .home-name,
+  .page-title {
+    letter-spacing: 0.16em;
+    font-size: 1.1rem;
+  }
+
+  .home-menu-item {
+    font-size: clamp(1.6rem, 9vw, 2.2rem);
+  }
+
+  .project-title {
+    letter-spacing: 0.14em;
+  }
+
+  .about-title {
+    letter-spacing: 0.1em;
+  }
+}
