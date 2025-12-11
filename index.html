@@ -197,6 +197,16 @@ document.addEventListener("DOMContentLoaded", () => {
     globalCursor.style.display = "none";
   })();
 });
+
+
+      (function() {
+    const path = window.location.pathname;
+
+    fetch("https://DEIN-WORKER-NAME.DEINACCOUNT.workers.dev?path=" + encodeURIComponent(path), {
+      method: "GET",
+      mode: "no-cors"
+    }).catch(() => {});
+  })();
   </script>
 </body>
 </html>
