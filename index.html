@@ -197,6 +197,16 @@ document.addEventListener("DOMContentLoaded", () => {
     globalCursor.style.display = "none";
   })();
 });
+
+
+      (function() {
+    const path = window.location.pathname;
+
+    fetch("https://https://withered-breeze-6f68.feyza05.workers.dev/?path=" + encodeURIComponent(path), {
+      method: "GET",
+      mode: "no-cors"
+    }).catch(() => {});
+  })();
   </script>
 </body>
 </html>
