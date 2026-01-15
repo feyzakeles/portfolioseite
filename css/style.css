@@ -1250,28 +1250,31 @@ grid-template-columns: minmax(0, 2.2fr) minmax(0, 1.4fr);
   }
 }
 
-/* ABOUT – Mobile: Avatar rechts oben, Text startet daneben */
+/* ABOUT – Mobile: Avatar rechts oben, Text startet direkt daneben */
 @media (max-width: 720px) {
   .about-hero {
-    display: block !important; /* Grid nur auf Mobile aus */
+    position: relative;
+    display: block !important;   /* egal was vorher war */
   }
 
+  /* Avatar oben rechts "aus dem Flow" nehmen */
   .about-hero-image {
-    float: right;
-    width: 96px;              /* Avatar-Größe */
-    margin: 4px 0 10px 12px;  /* Abstand zum Text */
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 96px;                 /* Avatar-Größe */
+    margin: 0 !important;
   }
 
   .about-hero-image img {
     width: 100%;
     height: auto;
-    border-radius: 50%;       /* Avatar rund */
     display: block;
+    border-radius: 50%;          /* Avatar rund */
   }
 
-  .about-hero::after {
-    content: "";
-    display: block;
-    clear: both;
+  /* Text bekommt Platz rechts für den Avatar */
+  .about-hero-text {
+    padding-right: 112px;        /* 96px + Luft */
   }
 }
