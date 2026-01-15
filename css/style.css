@@ -1249,3 +1249,29 @@ grid-template-columns: minmax(0, 2.2fr) minmax(0, 1.4fr);
     letter-spacing: 0.1em;
   }
 }
+
+/* ABOUT – Mobile: Bild rechts oben, Text startet daneben */
+@media (max-width: 720px) {
+  .about-hero {
+    display: block !important; /* Grid auf Mobile aus */
+  }
+
+  .about-hero-image {
+    float: right;
+    width: min(42vw, 180px);   /* Bildgröße mobil */
+    margin: 0 0 12px 14px;     /* Abstand zum Text */
+  }
+
+  .about-hero-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* Float wieder "clearen", damit danach nichts komisch läuft */
+  .about-hero::after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+}
