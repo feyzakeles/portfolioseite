@@ -1250,48 +1250,42 @@ grid-template-columns: minmax(0, 2.2fr) minmax(0, 1.4fr);
   }
 }
 
-/* ABOUT – Mobile Feintuning: kleinere Typo + Avatar rechts oben */
+/* ABOUT – Mobile: Bild nach oben rechts, Text startet daneben */
 @media (max-width: 720px) {
   .about-hero {
-    position: relative;
-    display: block !important;
+    display: flex !important;
+    flex-direction: column;
   }
 
-  /* Titel kleiner */
-  .about-title {
-    font-size: clamp(1.8rem, 7vw, 2.4rem);
-    letter-spacing: 0.1em;
-    margin-bottom: 10px;
-  }
-
-  /* Intro kleiner */
-  .about-intro-big {
-    font-size: 1.05rem;
-    line-height: 1.4;
-    margin-bottom: 10px !important;
-  }
-
-  /* Fließtext kleiner */
-  .about-lead {
-    font-size: 0.85rem;
-    line-height: 1.6;
-  }
-
-  /* Avatar rechts oben */
+  /* Bild ganz nach oben */
   .about-hero-image {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 88px;        /* etwas kleiner */
+    order: -1;                 /* vor den Text */
+    align-self: flex-end;      /* rechts */
+    width: 88px;               /* Avatar */
+    margin-bottom: 10px;
   }
 
   .about-hero-image img {
     width: 100%;
+    height: auto;
     border-radius: 50%;
+    display: block;
   }
 
-  /* Text bekommt Platz fürs Avatar */
-  .about-hero-text {
-    padding-right: 104px;
+  /* Text kleiner */
+  .about-title {
+    font-size: 2rem;
+    letter-spacing: 0.1em;
+    margin-bottom: 8px;
+  }
+
+  .about-intro-big {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+
+  .about-lead {
+    font-size: 0.85rem;
+    line-height: 1.6;
   }
 }
