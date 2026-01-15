@@ -1250,25 +1250,26 @@ grid-template-columns: minmax(0, 2.2fr) minmax(0, 1.4fr);
   }
 }
 
-/* ABOUT – Mobile: Bild rechts oben, Text startet daneben */
+/* ABOUT – Mobile: Avatar rechts oben, Text beginnt daneben */
 @media (max-width: 720px) {
   .about-hero {
-    display: block !important; /* Grid auf Mobile aus */
+    display: block !important; /* Grid aus */
   }
 
   .about-hero-image {
     float: right;
-    width: min(42vw, 180px);   /* Bildgröße mobil */
-    margin: 0 0 12px 14px;     /* Abstand zum Text */
+    width: 96px;              /* Avatar-Größe */
+    margin: 4px 0 10px 12px;  /* Abstand zum Text */
   }
 
   .about-hero-image img {
     width: 100%;
     height: auto;
+    border-radius: 50%;      /* rundes Avatar */
     display: block;
   }
 
-  /* Float wieder "clearen", damit danach nichts komisch läuft */
+  /* Float aufräumen */
   .about-hero::after {
     content: "";
     display: block;
