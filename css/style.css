@@ -1258,7 +1258,7 @@ grid-template-columns: minmax(0, 2.2fr) minmax(0, 1.4fr);
 
   .about-hero-image {
     float: right;
-    width: 96px;              /* Avatar-Größe */
+    width: 70px;              /* Avatar-Größe */
     margin: 4px 0 10px 12px;  /* Abstand zum Text */
   }
 
