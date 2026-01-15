@@ -1250,11 +1250,12 @@ grid-template-columns: minmax(0, 2.2fr) minmax(0, 1.4fr);
   }
 }
 
-/* ABOUT – Mobile: Text links + Avatar rechts oben */
+/* ABOUT – Mobile: Text links, Bild rechts oben (eckig, clean) */
 @media (max-width: 720px) {
+
   body.about-body .about-hero {
     display: grid;
-    grid-template-columns: 1fr 96px;  /* Text | Avatar */
+    grid-template-columns: 1fr 96px; /* Text | Bild */
     column-gap: 14px;
     row-gap: 14px;
     align-items: start;
@@ -1267,29 +1268,29 @@ grid-template-columns: minmax(0, 2.2fr) minmax(0, 1.4fr);
 
   body.about-body .about-hero-image {
     grid-column: 2;
-    grid-row: 1;            /* ganz oben */
-    align-self: start;
+    grid-row: 1;          /* ganz oben */
     justify-self: end;
-    margin-top: 0 !important;
+    align-self: start;
+    margin: 0 !important;
   }
 
   body.about-body .about-hero-image img {
-    width: 96px !important; /* Avatar */
-    max-width: none !important;
-    border-radius: 50%;
+    width: 96px;
+    max-width: none;
+    height: auto;
+    /* kein border-radius -> bleibt eckig */
   }
 
-  /* Restlicher Text läuft normal unter dem "Headerbereich" vollbreit */
+  /* Text unter dem "Headerbereich" wieder volle Breite */
   body.about-body .about-intro-big,
   body.about-body .about-lead {
     grid-column: 1 / -1;
   }
-}
 
-@media (max-width: 720px) {
+  /* etwas kleinere Typo für Mobile */
   body.about-body .about-title {
-    font-size: clamp(2.0rem, 8vw, 2.8rem);
-    letter-spacing: 0.10em;
+    font-size: clamp(2rem, 8vw, 2.8rem);
+    letter-spacing: 0.1em;
     margin-bottom: 10px;
   }
 
@@ -1303,3 +1304,5 @@ grid-template-columns: minmax(0, 2.2fr) minmax(0, 1.4fr);
     line-height: 1.65;
   }
 }
+
+
