@@ -1082,6 +1082,11 @@ grid-template-columns: minmax(0, 2.2fr) minmax(0, 1.4fr);
     z-index: 2000;
   }
 
+   .about-hero-image {
+    justify-self: end;
+    align-self: start;
+  }
+
   /* Icons nebeneinander */
   .sidebar-icons {
     flex-direction: row;
