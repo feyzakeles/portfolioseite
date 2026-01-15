@@ -1250,47 +1250,56 @@ grid-template-columns: minmax(0, 2.2fr) minmax(0, 1.4fr);
   }
 }
 
-/* ABOUT – Mobile: Avatar oben rechts am Textanfang */
+/* ABOUT – Mobile: Text links + Avatar rechts oben */
 @media (max-width: 720px) {
-
-  body.about-body .about-hero{
-    position: relative !important;
-    padding-top: 6px; /* kleine Luft */
+  body.about-body .about-hero {
+    display: grid;
+    grid-template-columns: 1fr 96px;  /* Text | Avatar */
+    column-gap: 14px;
+    row-gap: 14px;
+    align-items: start;
   }
 
-  /* Bild nach oben rechts ziehen (egal wo es im HTML steht) */
-  body.about-body .about-hero .about-hero-image{
-    position: absolute !important;
-    top: 0 !important;
-    right: 0 !important;
-    width: 88px !important;      /* Avatar-Größe */
-    margin: 0 !important;
-    z-index: 2;
+  body.about-body .about-hero-text {
+    grid-column: 1;
+    max-width: none;
   }
 
-  body.about-body .about-hero .about-hero-image img{
-    width: 100% !important;
-    height: auto !important;
-    display: block !important;
-    border-radius: 50% !important;  /* Avatar */
+  body.about-body .about-hero-image {
+    grid-column: 2;
+    grid-row: 1;            /* ganz oben */
+    align-self: start;
+    justify-self: end;
+    margin-top: 0 !important;
   }
 
-  /* Text bekommt Platz rechts für den Avatar => Text startet links daneben */
-  body.about-body .about-hero .about-hero-text{
-    padding-right: 108px !important; /* 88px + Abstand */
+  body.about-body .about-hero-image img {
+    width: 96px !important; /* Avatar */
+    max-width: none !important;
+    border-radius: 50%;
   }
 
-  /* Optional: etwas kleinere Typo, damit es luftiger wirkt */
-  body.about-body .about-title{
-    font-size: clamp(2rem, 8vw, 2.6rem) !important;
-    margin-bottom: 10px !important;
+  /* Restlicher Text läuft normal unter dem "Headerbereich" vollbreit */
+  body.about-body .about-intro-big,
+  body.about-body .about-lead {
+    grid-column: 1 / -1;
   }
-  body.about-body .about-intro-big{
-    font-size: 1.05rem !important;
-    line-height: 1.4 !important;
+}
+
+@media (max-width: 720px) {
+  body.about-body .about-title {
+    font-size: clamp(2.0rem, 8vw, 2.8rem);
+    letter-spacing: 0.10em;
+    margin-bottom: 10px;
   }
-  body.about-body .about-lead{
-    font-size: 0.88rem !important;
-    line-height: 1.65 !important;
+
+  body.about-body .about-intro-big {
+    font-size: 1.05rem;
+    line-height: 1.35;
+  }
+
+  body.about-body .about-lead {
+    font-size: 0.88rem;
+    line-height: 1.65;
   }
 }
