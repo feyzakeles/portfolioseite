@@ -1250,42 +1250,47 @@ grid-template-columns: minmax(0, 2.2fr) minmax(0, 1.4fr);
   }
 }
 
-/* ABOUT – Mobile: Bild nach oben rechts, Text startet daneben */
+/* ABOUT – Mobile: Avatar oben rechts am Textanfang */
 @media (max-width: 720px) {
-  .about-hero {
-    display: flex !important;
-    flex-direction: column;
+
+  body.about-body .about-hero{
+    position: relative !important;
+    padding-top: 6px; /* kleine Luft */
   }
 
-  /* Bild ganz nach oben */
-  .about-hero-image {
-    order: -1;                 /* vor den Text */
-    align-self: flex-end;      /* rechts */
-    width: 88px;               /* Avatar */
-    margin-bottom: 10px;
+  /* Bild nach oben rechts ziehen (egal wo es im HTML steht) */
+  body.about-body .about-hero .about-hero-image{
+    position: absolute !important;
+    top: 0 !important;
+    right: 0 !important;
+    width: 88px !important;      /* Avatar-Größe */
+    margin: 0 !important;
+    z-index: 2;
   }
 
-  .about-hero-image img {
-    width: 100%;
-    height: auto;
-    border-radius: 50%;
-    display: block;
+  body.about-body .about-hero .about-hero-image img{
+    width: 100% !important;
+    height: auto !important;
+    display: block !important;
+    border-radius: 50% !important;  /* Avatar */
   }
 
-  /* Text kleiner */
-  .about-title {
-    font-size: 2rem;
-    letter-spacing: 0.1em;
-    margin-bottom: 8px;
+  /* Text bekommt Platz rechts für den Avatar => Text startet links daneben */
+  body.about-body .about-hero .about-hero-text{
+    padding-right: 108px !important; /* 88px + Abstand */
   }
 
-  .about-intro-big {
-    font-size: 1rem;
-    line-height: 1.4;
+  /* Optional: etwas kleinere Typo, damit es luftiger wirkt */
+  body.about-body .about-title{
+    font-size: clamp(2rem, 8vw, 2.6rem) !important;
+    margin-bottom: 10px !important;
   }
-
-  .about-lead {
-    font-size: 0.85rem;
-    line-height: 1.6;
+  body.about-body .about-intro-big{
+    font-size: 1.05rem !important;
+    line-height: 1.4 !important;
+  }
+  body.about-body .about-lead{
+    font-size: 0.88rem !important;
+    line-height: 1.65 !important;
   }
 }
