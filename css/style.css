@@ -1250,31 +1250,48 @@ grid-template-columns: minmax(0, 2.2fr) minmax(0, 1.4fr);
   }
 }
 
-/* ABOUT – Mobile: Avatar rechts oben, Text startet direkt daneben */
+/* ABOUT – Mobile Feintuning: kleinere Typo + Avatar rechts oben */
 @media (max-width: 720px) {
   .about-hero {
     position: relative;
-    display: block !important;   /* egal was vorher war */
+    display: block !important;
   }
 
-  /* Avatar oben rechts "aus dem Flow" nehmen */
+  /* Titel kleiner */
+  .about-title {
+    font-size: clamp(1.8rem, 7vw, 2.4rem);
+    letter-spacing: 0.1em;
+    margin-bottom: 10px;
+  }
+
+  /* Intro kleiner */
+  .about-intro-big {
+    font-size: 1.05rem;
+    line-height: 1.4;
+    margin-bottom: 10px !important;
+  }
+
+  /* Fließtext kleiner */
+  .about-lead {
+    font-size: 0.85rem;
+    line-height: 1.6;
+  }
+
+  /* Avatar rechts oben */
   .about-hero-image {
     position: absolute;
     top: 0;
     right: 0;
-    width: 96px;                 /* Avatar-Größe */
-    margin: 0 !important;
+    width: 88px;        /* etwas kleiner */
   }
 
   .about-hero-image img {
     width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 50%;          /* Avatar rund */
+    border-radius: 50%;
   }
 
-  /* Text bekommt Platz rechts für den Avatar */
+  /* Text bekommt Platz fürs Avatar */
   .about-hero-text {
-    padding-right: 112px;        /* 96px + Luft */
+    padding-right: 104px;
   }
 }
