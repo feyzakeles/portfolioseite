@@ -187,34 +187,17 @@ document.addEventListener("DOMContentLoaded", () => {
     sel.remove();
     caret.remove();
 
-   // 5) Standort laden und deutschen Prefix tippen
+    // 5) Deutschen Prefix vor "Feyza." tippen
     const prefix = document.createElement("span");
     out.insertBefore(prefix, space); // [prefix][space][fixed]
     globalCursor.style.display = "";
-
-    // Standard-Text, falls der Standort nicht geladen werden kann
-    let locationText = "Hallo. Ich bin "; 
-
-    try {
-      // Wir rufen deinen Worker ab (Wichtig: Achte auf die korrekte URL ohne doppeltes https://)
-      const response = await fetch("https://withered-breeze-6f68.feyza05.workers.dev/");
-      if (response.ok) {
-        const geoData = await response.json();
-        if (geoData.city && geoData.city !== "Deutschland") {
-          // Wenn eine Stadt gefunden wurde, ändern wir den Text
-          locationText = `Hallo aus ${geoData.city}! Ich bin `;
-        }
-      }
-    } catch (e) {
-      console.log("Standort-Abfrage fehlgeschlagen, nutze Standard-Text.");
-    }
-
-    // Jetzt wird der Text (mit oder ohne Stadt) getippt
-    await typeInto(prefix, locationText, TYPE_MS);
+    await typeInto(prefix, DE_PREFIX, TYPE_MS);
 
     // 6) Cursor ausblenden
     await sleep(250);
     globalCursor.style.display = "none";
+  })();
+});
 
 
       (function() {
