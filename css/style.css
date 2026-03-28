@@ -219,7 +219,8 @@ a { color: inherit; text-decoration: none; }
   font-size: clamp(2.4rem, 5vw, 4.6rem);
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--primary);
+  /* Nutze hier explizit die Variable oder den Hex-Code */
+  color: var(--primary) !important; 
   position: relative;
   display: inline-flex;
   flex-direction: column;
@@ -241,9 +242,14 @@ a { color: inherit; text-decoration: none; }
   transition: opacity 0.25s ease, transform 0.25s ease;
 }
 
+.home-menu-item:visited {
+  color: var(--primary) !important;
+}
+
 .home-menu-item:hover {
   transform: translateX(10px);
-  opacity: 0.9;
+  color: var(--primary);
+  opacity: 0.8; /* Macht es beim Drüberfahren dezent heller/transparenter */
 }
 
 .home-menu-item:hover .home-menu-sub {
